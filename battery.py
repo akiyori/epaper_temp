@@ -23,7 +23,7 @@ class Battery:
         percentage = ((voltage - self.empty_battery) / self.battery_range)*100
         if percentage > 100:
             percentage = 100.00
-        print('{:.0f} % {:.2f} V'.format(percentage, voltage))
+        # print('{:.0f} % {:.2f} V'.format(percentage, voltage))
         return percentage
 
     def getVoltage(self):
@@ -31,3 +31,9 @@ class Battery:
 
     def isCharge(self):
         return self.charging.value() == 1
+
+
+if __name__ == '__main__':
+    senser = Battery()
+    print(senser.getSOC())
+    print(senser.getVoltage())
