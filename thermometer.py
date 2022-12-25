@@ -15,7 +15,7 @@ class Thermometer:
     def getA(self):
         read = self.sensor_temp.read_u16() * (3.3/65535)
         temp = 27 - (read - 0.706)/0.001721
-        print(temp)
+        print(str(temp)+' '+chr(176)+'C')
         return round(temp, 1)
 
 
