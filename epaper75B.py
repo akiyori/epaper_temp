@@ -283,3 +283,9 @@ class EPD_7in5_B:
                     self.imagered.fill_rect(
                         200+0+j*200, i*20+100+k*200, 100, 10, 0xff)
         self.display()
+
+
+if __name__ == '__main__':
+    epd = EPD_7in5_B()
+    epd.init()
+    epd.display_sample()
