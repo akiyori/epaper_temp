@@ -146,9 +146,11 @@ class Writer():
     def height(self):  # Property for consistency with device
         return self.font.height()
 
-    def text(self, text: str, x: int, y: int, fontSize=24, bold=False):
+    def text(self, text: str, x: int, y: int, fontSize=24, bold=False, rightFit=False):
         self._change_font_size(fontSize, bold)
         s = self._getstate()
+        if rightFit:
+            x -= len(text)*fontSize
         s.text_col = x
         s.text_row = y
         self.printstring(text)

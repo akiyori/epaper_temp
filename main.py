@@ -6,9 +6,9 @@ import _thread
 from dataCollector import DataCollector
 from graphPager import GraphPaper
 
-interval_get_value = 1
-interval_commit_value = 5
-interval_display = 60
+interval_get_value = 20
+interval_commit_value = 60*10
+interval_display = 60*20
 
 if __name__ == '__main__':
     thermometer = Thermometer()
@@ -35,8 +35,7 @@ if __name__ == '__main__':
 
     sensor_thread = _thread.start_new_thread(update_data, ())
 
-    graph = GraphPaper(temp_date, soc_data, 60*30)
-    sleep(30)
+    graph = GraphPaper(temp_date, soc_data, interval_commit_value)
     while True:
         print('start display')
         print('temp:{}, {}'.format(temp_date.get_data(), temp_date.scale))

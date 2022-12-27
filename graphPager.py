@@ -77,7 +77,7 @@ class GraphPaper:
             t[0], t[1], t[2], t[3], t[4], t[5]), 10, 10, 40, True)
         self.epd.writer_black.text(
             str(self.series1.round(self.data2.last_value))+'V', 500, 10, 40, True)
-        self.epd.writer_black.text(
+        self.epd.writer_red.text(
             str(self.series2.round(self.data1.last_value))+chr(176)+'C', 630, 10, 40, True)
         self.plot()
         self.epd.display()
@@ -126,7 +126,7 @@ class GraphPaper:
             self.epd.writer_black.text(
                 str(self.series1.round(value1)), 8, self.margin_top+self.cell_height*i-10)
             value2 = self.series2.max - i*self.series2.unit
-            self.epd.writer_black.text(str(self.series1.round(value2)), self.width+48,
+            self.epd.writer_black.text(str(self.series2.round(value2)), self.width+8,
                                        self.margin_top+self.cell_height*i-10, rightFit=True)
         # X軸 ラベル
         t = utime.localtime()

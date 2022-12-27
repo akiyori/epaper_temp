@@ -19,6 +19,7 @@ class DataCollector:
         self.data_count = 0
         self.average = 0
         self.average_whole = 0
+        self.scale = 0
         self.last_value = 0
         self.fn_get_value = fn_get_value
         self.name = name
